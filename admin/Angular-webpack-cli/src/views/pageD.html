@@ -1,22 +1,22 @@
 <div class="loading2-content clearfix" ng-cloak>
   <form name="projectForm">
       <div layout="row">
-        <md-input-container flex="50">
-          <label>用户名</label>
-          <input required name="userName" ng-model="pd.query.userName">
-          <div ng-messages="projectForm.userName.$error">
-            <div ng-message="required">用户名不正确</div>
-          </div>
-        </md-input-container>
+          <md-input-container flex="50">
+              <label>用户名</label>
+              <input required name="userName" ng-model="pd.query.userName">
+              <div ng-messages="projectForm.userName.$error">
+                  <div ng-message="required">用户名不正确</div>
+              </div>
+          </md-input-container>
       </div>
        <div layout="row">
-        <md-input-container flex="50">
-          <label>密码</label>
-          <input type="password" required name="password" ng-model="pd.query.password">
-          <div ng-messages="projectForm.password.$error">
-            <div ng-message="required">密码不正确</div>
-          </div>
-        </md-input-container>
+           <md-input-container flex="50">
+               <label>密码</label>
+               <input type="password" required name="password" ng-model="pd.query.password">
+               <div ng-messages="projectForm.password.$error">
+                   <div ng-message="required">密码不正确</div>
+               </div>
+           </md-input-container>
            <div id="loaders" layout="row" layout-align="start center">
                 <p>显示密码</p>
                 <md-switch
@@ -26,7 +26,7 @@
                 </md-switch>
           </div>
       </div>
-      <div>
+      <div class="login-btn">
         <md-button type="submit" ng-click="pd.submit()">Submit</md-button>
       </div>
     </form>

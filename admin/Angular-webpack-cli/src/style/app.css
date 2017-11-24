@@ -179,8 +179,8 @@ nav li a{
 
 .loading2-content{
   color: #222;
-  width: 830px;
-  height: 600px;
+  width: 730px;
+  height: 500px;
   background-color: #FFF;
   margin: 0 auto;
 }
@@ -203,4 +203,14 @@ nav li a{
   margin-left:100px;
   margin-top:50px;
   background-color: #fff;
+}
+/*输入框*/
+.layout-row{
+  width: 500px;
+  height: 60px;
+  margin: 0 auto;
+}
+.login-btn{
+    display: flex;
+    justify-content: center;
 }

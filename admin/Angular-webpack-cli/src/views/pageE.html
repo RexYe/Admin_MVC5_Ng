@@ -1,32 +1,34 @@
-	<div class="table-container">
-		<md-input-container flex="50">
-          <label>Project Type</label>
-          <md-select name="type" ng-model="pd.project.type" required>
-            <md-option value="app">Application</md-option>
-            <md-option value="web">Website</md-option>
-          </md-select>
-        </md-input-container>
-
-
-        <md-input-container class="md-block">
-        <label>Description</label>
-        <input md-maxlength="30" required md-no-asterisk name="description" ng-model="pd.project.description">
-        <div ng-messages="projectForm.description.$error">
-          <div ng-message="required">This is required.</div>
-          <div ng-message="md-maxlength">The description must be less than 30 characters long.</div>
+<div class="loading2-content clearfix" ng-cloak>
+    <form name="projectForm" class="login-form">
+        <div layout="row">
+            <md-input-container flex="50">
+                <label>用户名</label>
+                <input required name="userName" ng-model="pd.query.userName">
+                <div ng-messages="projectForm.userName.$error">
+                    <div ng-message="required">用户名不正确</div>
+                </div>
+            </md-input-container>
         </div>
-      </md-input-container>
-
-
-         <md-input-container class="md-block">
-        <label>Client Email</label>
-        <input required type="email" name="clientEmail" ng-model="pd.project.clientEmail"
-               minlength="10" maxlength="100" ng-pattern="/^.+@.+\..+$/" />
-
-        <div ng-messages="projectForm.clientEmail.$error" role="alert">
-          <div ng-message-exp="['required', 'minlength', 'maxlength', 'pattern']">
-           邮箱格式不正确
-          </div>
+        <div layout="row">
+            <md-input-container flex="50">
+                <label>密码</label>
+                <input type="password" required name="password" ng-model="pd.query.password">
+                <div ng-messages="projectForm.password.$error">
+                    <div ng-message="required">密码不正确</div>
+                </div>
+            </md-input-container>
+            <div class="showpsw">
+                <p>显示密码</p>
+                <md-switch
+                    ng-model="pd.activated"
+                    ng-change="pd.toggleActivation()"
+                    aria-label="Enable Indicators">
+                </md-switch>
+            </div>
         </div>
-      </md-input-container>
-	</div>
+        <div class="login-btn">
+            <md-button type="submit" ng-click="pd.submit()" class="md-raised md-primary">注册</md-button>
+            <md-button class="md-raised">取消</md-button>
+        </div>
+    </form>
+</div>

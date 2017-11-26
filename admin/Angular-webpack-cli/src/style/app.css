@@ -214,3 +214,19 @@ nav li a{
     display: flex;
     justify-content: center;
 }
+.login-form{
+  width: 300px;
+  margin: 0 auto;
+}
+/*显示密码*/
+.showpsw{
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+}
+.signup-container{
+  width: 300px;
+  height: 200px;
+  background-color: black;
+}

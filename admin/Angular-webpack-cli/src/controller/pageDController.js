@@ -5,7 +5,7 @@ export default class pageDController {
     constructor ($interval,httpService,utils) {
         this.httpservice = httpService;
         this.ut = utils;
-        this.activated = true;
+        this.pswflag = false;//是否显示密码
     };
     submit () {
         //console.log(this.query);
@@ -36,7 +36,7 @@ export default class pageDController {
     };
     //显示密码绑定事件
     toggleActivation () {
-
+        console.log(this);
     };
 }
 pageDController.$inject = ['$interval','httpService','utils'];

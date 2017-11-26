@@ -12,14 +12,14 @@
         <div layout="row">
             <md-input-container flex="50">
                 <label>密码</label>
-                <input type="password" required name="password" ng-model="pd.query.password">
+                <input type="password" required name="password" ng-model="pd.query.password" id="psw_input">
                 <div ng-messages="projectForm.password.$error">
                     <div ng-message="required">密码不正确</div>
                 </div>
             </md-input-container>
             <div class="showpsw">
-                <p ng-show="pd.pswflag">显示密码</p>
-                <p ng-show="!pd.pswflag">隐藏密码</p>
+                <p ng-show="pd.pswflag">隐藏密码</p>
+                <p ng-show="!pd.pswflag">显示密码</p>
                 <md-switch
                     ng-model="pd.pswflag"
                     ng-change="pd.toggleActivation()"

@@ -21,7 +21,6 @@ export default class pageDController {
             return response.json();
         })
        .then(function(data) {
-            //console.log('data',data);
             if(data[0] == null){
                 console.log('fail');
                 $location.path('../views/pageC.html');
@@ -34,9 +33,14 @@ export default class pageDController {
             console.log("Oops, error");
         });
     };
-    //显示密码绑定事件
+    //显示密码按钮绑定事件
     toggleActivation () {
-        console.log(this);
+        if (this.pswflag === true) {
+            $("#psw_input").attr('type','text');
+        }
+        else {
+            $("#psw_input").attr('type','password');
+        }
     };
 }
 pageDController.$inject = ['$interval','httpService','utils'];

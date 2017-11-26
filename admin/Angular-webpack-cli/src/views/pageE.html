@@ -18,9 +18,10 @@
                 </div>
             </md-input-container>
             <div class="showpsw">
-                <p>显示密码</p>
+                <p ng-show="pd.pswflag">隐藏密码</p>
+                <p ng-show="!pd.pswflag">显示密码</p>
                 <md-switch
-                    ng-model="pd.activated"
+                    ng-model="pd.pswflag"
                     ng-change="pd.toggleActivation()"
                     aria-label="Enable Indicators">
                 </md-switch>

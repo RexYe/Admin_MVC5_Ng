@@ -6,9 +6,9 @@ export default class pageDController {
         this.httpservice = httpService;
         this.ut = utils;
         this.pswflag = false;//是否显示密码
+        console.log(this);
     };
     submit () {
-        //console.log(this.query);
         var myInit = {
             method: 'POST',
             body:"login_name="+this.query.userName+"&password="+this.query.password,
@@ -21,16 +21,13 @@ export default class pageDController {
             return response.json();
         })
        .then(function(data) {
-            if(data[0] == null){
-                console.log('fail');
-                $location.path('../views/pageC.html');
-            }
-            else{
+            if(data == 'success') {
                 console.log('success');
+                window.location="/pageB";
             }
-        })
-       .catch(function(e) {
-            console.log("Oops, error");
+            else {
+                console.log('fail');
+            }
         });
     };
     //显示密码按钮绑定事件
@@ -43,4 +40,4 @@ export default class pageDController {
         }
     };
 }
-pageDController.$inject = ['$interval','httpService','utils'];
+pageDController.$inject = ['$interval','httpService','utils','$location'];

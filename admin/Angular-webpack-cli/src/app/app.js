@@ -20,7 +20,7 @@ import routesConfig from "./routes";
 import echartcontroller from "../controller/echartcontroller";
 import pageCController from "../controller/pageCController";
 import pageDController from "../controller/pageDController";
-import pageEController from "../controller/pageDController";
+import pageEController from "../controller/pageEController";
 
 //css
 import 'normalize.css';

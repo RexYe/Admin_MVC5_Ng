@@ -230,3 +230,18 @@ nav li a{
   height: 200px;
   background-color: black;
 }
+.code{
+  flex-direction: row;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100px;
+  height: 30px;
+  color: #303030;
+  font-size: 20px;
+  font-family: Arial;
+  background-image: url('https://github.com/RexYe/sharer_backend/blob/master/Sharer_front/src/img/e_%E8%83%8C%E6%99%AF%E5%9B%BE%E7%89%87.png?raw=true');
+  background-repeat:no-repeat;
+  background-size:100% 100%;
+  -moz-background-size:100% 100%;
+}

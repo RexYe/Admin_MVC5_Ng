@@ -1,7 +1,7 @@
 import tpl1 from '../views/DIALOG1TMPL.html'
 import dialogCtr from '../controller/dialogController'
 
-export default class pageDController {
+export default class loginController {
     constructor ($interval,httpService,utils) {
         this.httpservice = httpService;
         this.ut = utils;
@@ -9,21 +9,21 @@ export default class pageDController {
         console.log(this);
     };
     submit () {
-        var myInit = {
+        var myPost = {
             method: 'POST',
             body:"login_name="+this.query.userName+"&password="+this.query.password,
             headers: {
                 'Content-Type': 'application/x-www-form-urlencoded'
-            },
+            }
         };
-       fetch('http://localhost:52273/api/values/userlogin2',myInit)
+       fetch('http://localhost:52273/api/values/userlogin2',myPost)
        .then(function(response) {
             return response.json();
         })
        .then(function(data) {
             if(data == 'success') {
                 console.log('success');
-                window.location="/pageB";
+                window.location="/pageB";//跳转到登录成功页
             }
             else {
                 console.log('fail');
@@ -40,4 +40,4 @@ export default class pageDController {
         }
     };
 }
-pageDController.$inject = ['$interval','httpService','utils','$location'];
+loginController.$inject = ['$interval','httpService','utils','$location'];

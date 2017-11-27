@@ -38,12 +38,29 @@ namespace admin.Controllers
                 var userAllRight = db.Database.SqlQuery<UserLogIn2>($"select * from user where login_name = '{model.Login_name}' and password = '{model.Password.Md5String()}'").FirstOrDefault();
                 if (userAllRight == null)
                 {
+                    var entity = new UserLog
+                    {
+                        Log_name = model.Login_name,
+                        Log_time = "17/11/27",
+                        Log_state = "fail"
+
+                    };
+                    db.UserLogs.Add(entity);
+                    db.SaveChanges();
                     return "fail";
                 }
                 else
                 {
+                    var entity = new UserLog
+                    {
+                        Log_name = model.Login_name,
+                        Log_time = "17/11/27",
+                        Log_state = "success"
+                    };
+                    db.UserLogs.Add(entity);
+                    db.SaveChanges();
                     return "success";
-                }
+                }                
             }
         }
         //注册接口
@@ -70,6 +87,8 @@ namespace admin.Controllers
                 }
             }
         }
+
+
         // GET api/values/5
         [HttpGet]
         public List<UserLogIn> GetInfo()

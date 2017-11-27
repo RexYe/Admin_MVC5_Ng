@@ -1,5 +1,5 @@
 
-export default class pageEController {
+export default class signupController {
     constructor($interval,httpService,utils) {
         this.httpservice = httpService;
         this.ut = utils;
@@ -65,4 +65,4 @@ export default class pageEController {
         }
     }
 }
-pageEController.$inject = ['$interval','httpService','utils'];
+signupController.$inject = ['$interval','httpService','utils'];

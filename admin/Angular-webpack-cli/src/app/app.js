@@ -19,8 +19,8 @@ import routesConfig from "./routes";
 //controller
 import echartcontroller from "../controller/echartcontroller";
 import pageCController from "../controller/pageCController";
-import pageDController from "../controller/pageDController";
-import pageEController from "../controller/pageEController";
+import loginController from "../controller/loginController";
+import signupController from "../controller/signupController";
 
 //css
 import 'normalize.css';
@@ -38,8 +38,8 @@ angular.module(MODULE_NAME, ['ngRoute','ngMaterial',ngTableModule.name,'echartMo
   .component('myTable',myTableComponent)
   .controller('echartcontroller',echartcontroller)
   .controller('pageCController',pageCController)
-  .controller('pageDController',pageDController)
-  .controller('pageEController',pageEController)
+  .controller('loginController',loginController)
+  .controller('signupController',signupController)
   .config(routesConfig)
 
 export default MODULE_NAME;

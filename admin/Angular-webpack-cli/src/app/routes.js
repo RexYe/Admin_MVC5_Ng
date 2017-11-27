@@ -1,12 +1,12 @@
 import pageA from "../views/pageA.html";
 import pageB from "../views/pageB.html";
 import pageC from "../views/pageC.html";
-import pageD from "../views/pageD.html";
-import pageE from "../views/pageE.html";
+import login from "../views/login.html";
+import signup from "../views/signup.html";
 import echartcontroller from "../controller/echartcontroller"
 import pageCController from "../controller/pageCController"
-import pageDController from "../controller/pageDController"
-import pageEController from "../controller/pageEController"
+import loginController from "../controller/loginController"
+import signupController from "../controller/signupController"
 
 function config($routeProvider,$locationProvider){
   $routeProvider
@@ -30,15 +30,15 @@ function config($routeProvider,$locationProvider){
       controller:"pageCController",
       controllerAs:'pc'
     })
-    .when('/pageD',{
-      template:pageD,
-      controller:"pageDController",
-      controllerAs:'pd'
+    .when('/login',{
+      template:login,
+      controller:"loginController",
+      controllerAs:'login'
     })
-    .when('/pageE',{
-      template:pageE,
-      controller:"pageEController",
-      controllerAs:'pe'
+    .when('/signup',{
+      template:signup,
+      controller:"signupController",
+      controllerAs:'signup'
     })
     .otherwise({
     	redirectTo:'/pageA'}

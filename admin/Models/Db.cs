@@ -14,5 +14,7 @@ namespace admin.Models
         public DbSet<UserLogIn> UserLogIns { get; set; }
 
         public DbSet<UserLogIn2> UserLogIn2s { get; set; }
+
+        public DbSet<UserLog> UserLogs { get; set; }
      }
 }

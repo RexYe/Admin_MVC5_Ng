@@ -41,9 +41,8 @@ namespace admin.Controllers
                     var entity = new UserLog
                     {
                         Log_name = model.Login_name,
-                        Log_time = "17/11/27",
+                        Log_time =  DateTime.Now.ToString("yyyy-MM-dd HH:mm:ss"),
                         Log_state = "fail"
-
                     };
                     db.UserLogs.Add(entity);
                     db.SaveChanges();
@@ -54,13 +53,13 @@ namespace admin.Controllers
                     var entity = new UserLog
                     {
                         Log_name = model.Login_name,
-                        Log_time = "17/11/27",
+                        Log_time = DateTime.Now.ToString("yyyy-MM-dd HH:mm:ss"),
                         Log_state = "success"
                     };
                     db.UserLogs.Add(entity);
                     db.SaveChanges();
                     return "success";
-                }                
+                }          
             }
         }
         //注册接口
@@ -91,11 +90,14 @@ namespace admin.Controllers
 
         // GET api/values/5
         [HttpGet]
-        public List<UserLogIn> GetInfo()
+        public List<UserLogIn2> GetInfo()   
         {
-            using(var db=new Db())
+            using(var db = new Db())
             {
-                return db.Database.SqlQuery<UserLogIn>("select * from test").ToList();
+                var queryAlluser = from UserLogIn2 in db.UserLogIn2s
+                                   select UserLogIn2;
+                return queryAlluser.ToList();
+                //return db.Database.SqlQuery<UserLogIn>("select * from test").ToList();
             }
             
         }

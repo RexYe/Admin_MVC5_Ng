@@ -7,6 +7,7 @@ using System.Web.Http;
 using System.Data.SqlClient;
 using admin.Models;
 using admin.Extension;
+using System.Web.Http.Results;
 
 namespace admin.Controllers
 {
@@ -38,14 +39,17 @@ namespace admin.Controllers
                 var userAllRight = db.Database.SqlQuery<UserLogIn2>($"select * from user where login_name = '{model.Login_name}' and password = '{model.Password.Md5String()}'").FirstOrDefault();
                 if (userAllRight == null)
                 {
-                    var entity = new UserLog
-                    {
-                        Log_name = model.Login_name,
-                        Log_time =  DateTime.Now.ToString("yyyy-MM-dd HH:mm:ss"),
-                        Log_state = "fail"
-                    };
-                    db.UserLogs.Add(entity);
-                    db.SaveChanges();
+                    var loginNameExist = db.Database.SqlQuery<UserLogIn2>($"select * from user where login_name = '{model.Login_name}'").FirstOrDefault();
+                    if (loginNameExist != null) {
+                        var entity = new UserLog
+                        {
+                            Log_name = model.Login_name,
+                            Log_time = DateTime.Now.ToString("yyyy-MM-dd HH:mm:ss"),
+                            Log_state = "fail"
+                        };
+                        db.UserLogs.Add(entity);
+                        db.SaveChanges();
+                    }
                     return "fail";
                 }
                 else
@@ -85,8 +89,17 @@ namespace admin.Controllers
                     return "username exist";
                 }
             }
-        }
+        } 
+       /* [HttpPost]
+        public JsonResult Login(UserLogIn2 model)
+        {
+            
+            return Json(new {
+                    success = "success",
 
+            },JsonRequestBehavior.AllowGet);
+        }
+        */
 
         // GET api/values/5
         [HttpGet]

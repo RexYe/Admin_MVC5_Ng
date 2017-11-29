@@ -1,6 +1,26 @@
-﻿<div class="jumbotron">
+﻿@*<div class="jumbotron">
     <h1>ASP.NET</h1>
     <p class="lead">ASP.NET is a free web framework for building great Web sites and Web applications using HTML, CSS, and JavaScript.</p>
     <p><a href="https://asp.net" class="btn btn-primary btn-lg">Learn more &raquo;</a></p>
-</div>
+</div>*@
 
+<!doctype html>
+<html ng-app="app" lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Angular App</title>
+    <link rel="icon" type="image/x-icon" href="img/favicon.ico">
+    <script src="https://apps.bdimg.com/libs/jquery/2.1.4/jquery.min.js">
+    </script>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <base href="/">
+    <link href="~/Angular-webpack-cli/dist/app.bfaed798ea1061083654.css" rel="stylesheet">
+</head>
+<body>
+    <header>
+        <navigation></navigation>
+    </header>
+    <div ng-view class="main-content clearfix"></div>
+    <script type="text/javascript" src="~/Angular-webpack-cli/dist/app.bfaed798ea1061083654.js"></script>
+</body>
+</html>

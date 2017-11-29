@@ -202,6 +202,11 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="Angular-webpack-cli\dist\app.bfaed798ea1061083654.css" />
+    <Content Include="Angular-webpack-cli\dist\app.bfaed798ea1061083654.js" />
+    <Content Include="Angular-webpack-cli\dist\img\icons\ic_close_24px.svg" />
+    <Content Include="Angular-webpack-cli\dist\img\icons\user.svg" />
+    <Content Include="Angular-webpack-cli\dist\index.html" />
     <Content Include="Areas\HelpPage\HelpPage.css" />
     <Content Include="Content\bootstrap.css" />
     <Content Include="Content\bootstrap.min.css" />
